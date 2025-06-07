@@ -1,34 +1,32 @@
-# Core environment
 streamlit==1.45.1
 python-dotenv==1.1.0
-
-# PDF parsing
-PyMuPDF==1.26.0  # for `fitz`
-langchain-community==0.3.24  # for PyPDFLoader
-
-# LangChain ecosystem
 langchain==0.3.25
 langchain-core==0.3.64
-langchain-google-genai==2.1.5
-langchain-text-splitters==0.3.8
+langchain-community==0.3.24
+langchain-google-genai
 langchain-qdrant==0.2.0
-
-# Google GenAI
-google-ai-generativelanguage==0.6.18
-
-# Qdrant vector DB
+langchain-text-splitters==0.3.8
+langsmith==0.3.45
 qdrant-client==1.14.2
-
-# Embedding + NLP
-google-api-core==2.25.0
+google-generativeai
+google-ai-generativelanguage
 google-api-python-client==2.171.0
 google-auth==2.40.3
 google-auth-httplib2==0.2.0
-googleapis-common-protos==1.70.0
-grpcio==1.72.1
-grpcio-status==1.71.0
-
-# Utils
+protobuf==5.29.5
+proto-plus==1.26.1
+pymupdf==1.26.0
+PyPDF2==3.0.1
+filetype==1.2.0
+pandas==2.3.0
+numpy==2.3.0
 tqdm==4.67.1
+httpx==0.28.1
 requests==2.32.3
-protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0,>=3.20.2 
+httpx-sse==0.4.0
+pydantic==2.11.5
+pydantic-settings==2.9.1
+jinja2==3.1.6
+watchdog==6.0.0
+typing-extensions==4.14.0
+attrs==25.3.0
