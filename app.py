@@ -5,7 +5,7 @@ import tempfile
 import streamlit as st
 from dotenv import load_dotenv
 from langchain.schema import Document
-from langchain.vectorstores.qdrant import Qdrant as QdrantVectorStore
+from langchain_community.vectorstores import Qdrant as QdrantVectorStore
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from qdrant_client import QdrantClient
