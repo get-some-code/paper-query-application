@@ -2,7 +2,6 @@ import os
 import re
 import fitz
 import tempfile
-import time
 import streamlit as st
 from dotenv import load_dotenv
 from langchain.schema import Document
