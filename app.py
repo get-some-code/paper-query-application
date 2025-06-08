@@ -16,9 +16,9 @@ import google.generativeai as genai
 from langchain_community.document_loaders import PyPDFLoader
 
 # Load API key
-load_dotenv()
-GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY")
-QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+# load_dotenv()
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+QDRANT_API_KEY = st.secrets["QDRANT_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # Utility Functions
