@@ -68,9 +68,12 @@ if file and st.button("📚 Prepare PDF"):
         google_api_key=GEMINI_API_KEY
     )
     qdrant_client = QdrantClient(
-    url="https://3e3583cf-d0e6-4cc1-b344-1dec8fdce1cc.us-east4-0.gcp.cloud.qdrant.io:6333", 
+    url="https://3e3583cf-d0e6-4cc1-b344-1dec8fdce1cc.us-east4-0.gcp.cloud.qdrant.io", 
     api_key=QDRANT_API_KEY,
+    prefer_grpc=False
     )
+
+    # print("Qdrant api: ",QDRANT_API_KEY)
     collection_name = "rag-chat-application"
 
     if qdrant_client.collection_exists(collection_name):
@@ -79,7 +82,7 @@ if file and st.button("📚 Prepare PDF"):
     with st.spinner("Vectorizing and indexing your PDF..."):
         vector_store = QdrantVectorStore.from_documents(
             documents=chunks,
-            url="https://3e3583cf-d0e6-4cc1-b344-1dec8fdce1cc.us-east4-0.gcp.cloud.qdrant.io:6333",
+            url="https://3e3583cf-d0e6-4cc1-b344-1dec8fdce1cc.us-east4-0.gcp.cloud.qdrant.io",
             api_key=QDRANT_API_KEY,
             collection_name=collection_name,
             embedding=embedding_model,
