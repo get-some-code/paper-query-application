@@ -6,7 +6,6 @@ import random
 from qdrant_client.http import models
 import tempfile
 import streamlit as st
-from dotenv import load_dotenv
 from langchain.schema import Document
 from langchain_community.vectorstores import Qdrant as QdrantVectorStore
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -16,7 +15,7 @@ import google.generativeai as genai
 from langchain_community.document_loaders import PyPDFLoader
 
 # Load API key
-# load_dotenv()
+
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 QDRANT_API_KEY = st.secrets["QDRANT_API_KEY"]
 genai.configure(api_key=GOOGLE_API_KEY)
@@ -116,7 +115,6 @@ if file and st.button("📚 Prepare PDF"):
                     )
                 ]
             )
-            st.write(f"Indexed chunk {idx+1} of {len(chunks)}")
             time.sleep(0.2)  # small delay to avoid rate limits
 
     st.success("✅ Successfully Processed and Indexed PDF!")
@@ -189,4 +187,3 @@ if st.session_state.pdf_ready:
 if st.session_state.messages:
     if st.button("🧹 Reset Chat"):
         del st.session_state.messages
-        st.experimental_rerun()
