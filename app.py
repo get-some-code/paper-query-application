@@ -14,9 +14,9 @@ from langchain_community.document_loaders import PyPDFLoader
 
 # Load API key
 load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GOOGLE_API_KEY = os.getenv("GEMINI_API_KEY")
 QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
-genai.configure(api_key=GEMINI_API_KEY)
+genai.configure(api_key=GOOGLE_API_KEY)
 
 # Utility Functions
 def remove_surrogates(text: str) -> str:
@@ -65,7 +65,7 @@ if file and st.button("📚 Prepare PDF"):
     # Embeddings
     embedding_model = GoogleGenerativeAIEmbeddings(
         model="models/embedding-001",
-        google_api_key=GEMINI_API_KEY
+        google_api_key=GOOGLE_API_KEY
     )
     qdrant_client = QdrantClient(
     url="https://3e3583cf-d0e6-4cc1-b344-1dec8fdce1cc.us-east4-0.gcp.cloud.qdrant.io", 
